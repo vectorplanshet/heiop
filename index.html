@@ -1126,16 +1126,12 @@ fetch("front.json")
 
         if (feature.properties.name === 'Граница') {
           color = '#000000'
-          opacity = 0.15; // Прозрачность границы
+          opacity = 1; // Прозрачность границы
           fillOpacity = 0.0; // Прозрачность заливки
-        } else if (feature.properties.name === 'Линия фронта') {
+        } else if (feature.properties.name === 'Линия Фронта') {
           color = '#a52714'; // Цвет для "Оккупировано"
           opacity = 1
           fillOpacity = 0.0// Заливка полупрозрачная
-        } else if (feature.properties.name === 'Неизвестно') {
-          color = '#bdbdbd'; // Цвет для "Неизвестно"
-          opacity = 0.1; // Прозрачность границы
-          fillOpacity = 0.1; // Прозрачность заливки
         }
 
         // Возвращаем стиль с про   зрачностью
