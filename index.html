@@ -17,6 +17,8 @@
     integrity="sha384-8SqKZR7V8uOetpjjbcNJHvwuHpb074WS0UXjCLhzfJUqYn3B/uWx1WVv5mwRp1mV"
     crossorigin="anonymous"
 ></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         /* General Map Styles */
         #map {
@@ -1126,11 +1128,11 @@ fetch("front.json")
 
         if (feature.properties.name === 'Граница') {
           color = '#000000'
-          opacity = 1; // Прозрачность границы
+          opacity = 0.7; // Прозрачность границы
           fillOpacity = 0.0; // Прозрачность заливки
         } else if (feature.properties.name === 'Линия Фронта') {
-          color = '#ff0000'; // Цвет для "Оккупировано"
-          opacity = 1
+          color = '#B22222'; // Цвет для "Оккупировано"
+          opacity = 0.7
           fillOpacity = 0.0// Заливка полупрозрачная
         }
 
