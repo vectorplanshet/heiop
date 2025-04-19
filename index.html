@@ -1130,8 +1130,8 @@ fetch("granica.json")
     L.geoJSON(data, {
       filter: feature => feature.properties.name === 'Граница',
       style: {
-        color: 'yellow',
-        weight: 6,
+        color: '#fad06e',
+        weight: 8,
         opacity: 0.7,
         fillOpacity: 0.0
       }
@@ -1143,11 +1143,13 @@ fetch("granica.json")
         let color = '#bdbdbd'; // По умолчанию
         let opacity = 1;
         let fillOpacity = 1;
+        let dashArray = '';  // Без пунктиров по умолчанию
 
         if (feature.properties.name === 'Граница') {
           color = '#000000';
           opacity = 0.7;
           fillOpacity = 0.0;
+          dashArray = '5, 5';  // Это создаёт пунктирную линию
         } else if (feature.properties.name === 'Линия Фроінта') {
           color = '#B22222';
           opacity = 0.7;
@@ -1159,11 +1161,13 @@ fetch("granica.json")
           weight: 2,
           opacity: opacity,
           fillColor: color,
-          fillOpacity: fillOpacity
+          fillOpacity: fillOpacity,
+          dashArray: dashArray  // Применяем пунктир для "Границы"
         };
       }
     }).addTo(map);
   });
+
 fetch("front.json")
   .then(response => response.json())
   .then(data => {
