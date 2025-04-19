@@ -1131,7 +1131,7 @@ fetch("granica.json")
       filter: feature => feature.properties.name === 'Граница',
       style: {
         color: '#ffdd8f',
-        weight: 9,
+        weight: 10,
         opacity: 0.7,
         fillOpacity: 0.0
       }
@@ -1179,12 +1179,12 @@ fetch("front.json")
 
         if (feature.properties.name === 'Граниsца') {
           color = '#000000'
-          opacity = 0.7; // Прозрачность границы
+          opacity = 0.0; // Прозрачность границы
           fillOpacity = 0.0; // Прозрачность заливки
         } else if (feature.properties.name === 'Линия Фронта') {
           color = '#c41000'; // Цвет для "Оккупировано"
-          opacity = 0.1
-          fillOpacity = 0.0// Заливка полупрозрачная
+          opacity = 1;
+          fillOpacity = 0.0;// Заливка полупрозрачная
         }
 
         // Возвращаем стиль с про   зрачностью
