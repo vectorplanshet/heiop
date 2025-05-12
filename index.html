@@ -1177,7 +1177,7 @@ fetch("front.json")
         let opacity = 1; // По умолчанию непрозрачность для "неизвестно"
         let fillOpacity = 1; // По умолчанию заливка непрозрачная
 
-        if (feature.properties.name === 'Граница') {
+        if (feature.properties.name === 'Граниsца') {
           color = '#000000'
           opacity = 0.0; // Прозрачность границы
           fillOpacity = 0.0; // Прозрачность заливки
@@ -1281,6 +1281,438 @@ function getNextObjectId() {
     `;
     return iconHTML;
     };
-    </script>
+  // Иконка Сумы
+  var sumyIcon = L.icon({
+    iconUrl: 'sumy.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Киев
+  var kyivIcon = L.icon({
+    iconUrl: 'kyiv.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Ивано-Франковск
+  var ifrankivskIcon = L.icon({
+    iconUrl: 'ifrankivsk.png',
+    iconSize: [100, 27],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Львов
+  var lvivIcon = L.icon({
+    iconUrl: 'lviv.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Херсон
+  var khersonIcon = L.icon({
+    iconUrl: 'kherson.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Хмельницкий
+  var khmelnitskyIcon = L.icon({
+    iconUrl: 'khmelnitsky.png',
+    iconSize: [100, 27],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Житомир
+  var zhytomyrIcon = L.icon({
+    iconUrl: 'zhytomyr.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Черкассы
+  var cherkasyIcon = L.icon({
+    iconUrl: 'cherkasy.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Чернигов
+  var chernihivIcon = L.icon({
+    iconUrl: 'chernihiv.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Харьков
+  var kharkivIcon = L.icon({
+    iconUrl: 'kharkiv.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Одесса (поменяна на odesa.png)
+  var odesaIcon = L.icon({
+    iconUrl: 'odesa.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Донецк
+  var donetskIcon = L.icon({
+    iconUrl: 'donetsk.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Луганск
+  var luhanskIcon = L.icon({
+    iconUrl: 'luhansk.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Николаев
+  var nikolaevIcon = L.icon({
+    iconUrl: 'mykolaiv.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Днепр
+  var dnieperIcon = L.icon({
+    iconUrl: 'dnipro.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Полтава
+  var poltavaIcon = L.icon({
+    iconUrl: 'poltava.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Луцк
+  var lutskIcon = L.icon({
+    iconUrl: 'lutsk.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Ровно (поменяна на rivne.png)
+  var rivneIcon = L.icon({
+    iconUrl: 'rivne.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Иконка Тернополь (поменяна размер на 100x27)
+  var ternopilIcon = L.icon({
+    iconUrl: 'ternopil.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var vinytsaIcon = L.icon({
+    iconUrl: 'vinytsa.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var kurskIcon = L.icon({
+    iconUrl: 'kursk.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var kropIcon = L.icon({
+    iconUrl: 'kropivnitsky.png',
+    iconSize: [100, 27],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var uzhorodIcon = L.icon({
+    iconUrl: 'uzhorod.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+  
+  var zaporizhzhyaIcon = L.icon({
+    iconUrl: 'zaporizhzhya.png',
+    iconSize: [100, 27],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var voronezhIcon = L.icon({
+    iconUrl: 'voronezh.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var chernivtsyIcon = L.icon({
+    iconUrl: 'chernivtsy.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var sevastopolIcon = L.icon({
+    iconUrl: 'sevastopol.png',
+    iconSize: [100, 27],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var simferopolIcon = L.icon({
+    iconUrl: 'simferopol.png',
+    iconSize: [100, 27],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var rostovIcon = L.icon({
+    iconUrl: 'rostov.png',
+    iconSize: [100, 27],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var belgorodIcon = L.icon({
+    iconUrl: 'belgorod.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var orelIcon = L.icon({
+    iconUrl: 'orel.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+
+  var krasnodarIcon = L.icon({
+    iconUrl: 'krasnodar.png',
+    iconSize: [100, 27],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var kishinevIcon = L.icon({
+    iconUrl: 'kishinev.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var tiraspolIcon = L.icon({
+    iconUrl: 'tiraspol.png',
+    iconSize: [100, 27],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var bryanskIcon = L.icon({
+    iconUrl: 'bryansk.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var gomelIcon = L.icon({
+    iconUrl: 'gomel.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var brestIcon = L.icon({
+    iconUrl: 'brest.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var tambovIcon = L.icon({
+    iconUrl: 'tambov.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var lipetskIcon = L.icon({
+    iconUrl: 'lipetsk.png',
+    iconSize: [54, 17],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var volgogradIcon = L.icon({
+    iconUrl: 'volgograd.png',
+    iconSize: [100, 27],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  var stavropolIcon = L.icon({
+    iconUrl: 'stavropol.png',
+    iconSize: [100, 27],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8]
+  });
+
+  // Маркеры
+  L.marker([50.9077, 34.7981], {icon: sumyIcon}).addTo(map)
+    .bindPopup('Сумы');
+
+  L.marker([50.4501, 30.5234], {icon: kyivIcon}).addTo(map)
+    .bindPopup('Киев');
+
+  L.marker([48.9226, 24.7111], {icon: ifrankivskIcon}).addTo(map)
+    .bindPopup('Ивано-Франковск');
+
+  L.marker([49.8397, 24.0297], {icon: lvivIcon}).addTo(map)
+    .bindPopup('Львов');
+
+  L.marker([46.6354, 32.6168], {icon: khersonIcon}).addTo(map)
+    .bindPopup('Херсон');
+
+  L.marker([49.4194, 26.9871], {icon: khmelnitskyIcon}).addTo(map)
+    .bindPopup('Хмельницкий');
+
+  L.marker([50.2558, 28.6647], {icon: zhytomyrIcon}).addTo(map)
+    .bindPopup('Житомир');
+
+  L.marker([49.4444, 32.0591], {icon: cherkasyIcon}).addTo(map)
+    .bindPopup('Черкассы');
+
+  L.marker([51.4845, 31.2752], {icon: chernihivIcon}).addTo(map)
+    .bindPopup('Чернигов');
+
+  L.marker([49.9997, 36.3055], {icon: kharkivIcon}).addTo(map)
+    .bindPopup('Харьков');
+
+  L.marker([46.466028051982505, 30.73194464183904], {icon: odesaIcon}).addTo(map) // Одесса - новая иконка
+    .bindPopup('Одесса');
+
+  L.marker([48.0159, 37.8028], {icon: donetskIcon}).addTo(map)
+    .bindPopup('Донецк');
+
+  L.marker([48.5734, 39.2917], {icon: luhanskIcon}).addTo(map) // Луганск
+    .bindPopup('Луганск');
+
+  L.marker([46.96606377078415, 32.00714190111791], {icon: nikolaevIcon}).addTo(map) // Николаев
+    .bindPopup('Николаев');
+
+  L.marker([48.4647, 35.0462], {icon: dnieperIcon}).addTo(map) // Днепр
+    .bindPopup('Днепр');
+
+  L.marker([49.5883, 34.5516], {icon: poltavaIcon}).addTo(map) // Полтава
+    .bindPopup('Полтава');
+
+  L.marker([50.7384, 25.3496], {icon: lutskIcon}).addTo(map) // Луцк
+    .bindPopup('Луцк');
+
+  L.marker([50.6174, 26.2505], {icon: rivneIcon}).addTo(map) // Ровно
+    .bindPopup('Ровно');
+
+  L.marker([49.5535, 25.5944], {icon: ternopilIcon}).addTo(map) // Тернополь
+    .bindPopup('Тернополь');
+
+  L.marker([49.230076505396205, 28.466140385007137], {icon: vinytsaIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Винница');
+
+    L.marker([51.74054846059095, 36.202022431404735], {icon: kurskIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Курск');
+    
+    L.marker([48.505884379238395, 32.25939701824791], {icon: kropIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Кропивницкий');   
+    
+    L.marker([47.83806363302623, 35.138117335493426], {icon: zaporizhzhyaIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Запорожье');
+
+    L.marker([48.617860172673396, 22.287111731790745], {icon: uzhorodIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Ужгород');
+
+    L.marker([51.664770210236625, 39.192003637554144], {icon: voronezhIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Воронеж');
+    
+    L.marker([48.289416014336034, 25.93849702601369], {icon: chernivtsyIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Черновцы');
+
+    L.marker([44.606932664165086, 33.52121147182199], {icon: sevastopolIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Севастополь');
+
+    L.marker([44.944693129246815, 34.095374166785824], {icon: simferopolIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Симферополь');
+
+    L.marker([47.23695642994803, 39.70560535866672], {icon: rostovIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Ростов-На-Дону');
+    
+    L.marker([50.593362209571985, 36.60262218379635], {icon: belgorodIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Белгород');
+
+    L.marker([52.96806326717185, 36.05768708492768], {icon: orelIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Орел');
+
+    L.marker([45.03422412918758, 38.97433481150454], {icon: krasnodarIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Краснодар');
+
+    L.marker([47.00443988352829, 28.86221026505548], {icon: kishinevIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Кишинев');
+
+    L.marker([46.848418668720264, 29.596272952267398], {icon: tiraspolIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Тирасполь');
+
+    L.marker([53.26313369889039, 34.41449235432519], {icon: bryanskIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Брянск');
+    
+    L.marker([52.427529150174315, 30.992362579646386], {icon: gomelIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Гомель');
+
+    L.marker([52.098693394195976, 23.763378922343506], {icon: brestIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Брест');
+
+    L.marker([52.73283272787129, 41.43950655006939], {icon: tambovIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Тамбов');
+
+    L.marker([52.61046379351352, 39.60105501243989], {icon: lipetskIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Липецк');
+
+    L.marker([48.70827924051519, 44.50919990164602], {icon: volgogradIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Волгоград');
+
+    L.marker([45.037336252262534, 41.9645886199773], {icon: stavropolIcon}).addTo(map) // Винница (новые координаты)
+    .bindPopup('Ставрополь');
+</script>
+</script>
+</script>
 </body>
 </html>
