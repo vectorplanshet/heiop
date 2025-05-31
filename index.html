@@ -17,8 +17,6 @@
     integrity="sha384-8SqKZR7V8uOetpjjbcNJHvwuHpb074WS0UXjCLhzfJUqYn3B/uWx1WVv5mwRp1mV"
     crossorigin="anonymous"
 ></script>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         /* General Map Styles */
         #map {
@@ -160,19 +158,18 @@ input[type="text"]:focus {
         .label-container {
             font-size: 14px;
             font-weight: 450;
-                    font-family: 'Roboto', sans-serif;
+  font-family: "Arial", sans-serif;
             -webkit-text-stroke-color: black;
         }
         .r-container {
             font-size: 14px;
             font-weight: 450;
-            font-family: 'Roboto', sans-serif;
+  font-family: "Arial", sans-serif;
  
         }
         .rls1-container {
             font-size: 14px;
-            font-family: 'Roboto', sans-serif;
- 
+  font-family: "Arial", sans-serif;
             display: flex;
     flex-direction: column;
     font-weight: 500;
@@ -180,7 +177,7 @@ input[type="text"]:focus {
         .rls-container {
             font-size: 14px;
             display: flex;
-            font-family: 'Roboto', sans-serif;
+  font-family: "Arial", sans-serif;
             font-weight: 450;
     flex-direction: column;
     justify-content: center;
@@ -195,7 +192,7 @@ input[type="text"]:focus {
         }
         .label1-container {
             font-size: 14px;
-            font-family: 'Roboto', sans-serif;
+  font-family: "Arial", sans-serif;
             font-weight: 500;
             -webkit-text-stroke-color: black;
             white-space: nowrap;
@@ -205,7 +202,7 @@ input[type="text"]:focus {
         .r1-container {
             font-size: 14px;
             font-weight: 450;
-            font-family: 'Roboto', sans-serif;
+  font-family: "Microsoft Sans Serif", Tahoma, sans-serif;
  
         }
         .c-container {
@@ -1711,6 +1708,20 @@ function getNextObjectId() {
 
     L.marker([45.037336252262534, 41.9645886199773], {icon: stavropolIcon}).addTo(map) // Винница (новые координаты)
     .bindPopup('Ставрополь');
+      // Загрузка GeoJSON (замени на свой путь к JSON)
+  fetch('ukraine.json') // или 'regions.json', если у тебя так называется
+    .then(res => res.json())
+    .then(data => {
+      // Добавление GeoJSON с нужным стилем
+      L.geoJSON(data, {
+        style: {
+          color: 'black',         // цвет линии
+          weight: 2,              // толщина линии
+          dashArray: '5,5',       // пунктир
+          fillOpacity: 0          // без заливки
+        }
+      }).addTo(map);
+    });
 </script>
 </script>
 </script>
