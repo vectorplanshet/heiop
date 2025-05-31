@@ -1714,12 +1714,15 @@ function getNextObjectId() {
     .then(data => {
       // Добавление GeoJSON с нужным стилем
       L.geoJSON(data, {
-        style: {
-          color: 'black',         // цвет линии
-          weight: 0.5,              // толщина линии
-          dashArray: '9',       // пунктир
-          fillOpacity: 0          // без заливки
-        }
+style: function(feature) {
+  return {
+    color: 'black',
+    weight: 0.5,
+    dashArray: '4',
+    fillOpacity: 0
+  };
+}
+
       }).addTo(map);
     });
 </script>
