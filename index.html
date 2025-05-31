@@ -1174,7 +1174,7 @@ fetch("front.json")
         let opacity = 1; // По умолчанию непрозрачность для "неизвестно"
         let fillOpacity = 1; // По умолчанию заливка непрозрачная
 
-        if (feature.properties.name === 'Граниsца') {
+        if (feature.properties.name === 'Граница') {
           color = '#000000'
           opacity = 0.0; // Прозрачность границы
           fillOpacity = 0.0; // Прозрачность заливки
@@ -1716,8 +1716,8 @@ function getNextObjectId() {
       L.geoJSON(data, {
         style: {
           color: 'black',         // цвет линии
-          weight: 1,              // толщина линии
-          dashArray: '7',       // пунктир
+          weight: 0.5,              // толщина линии
+          dashArray: '9',       // пунктир
           fillOpacity: 0          // без заливки
         }
       }).addTo(map);
