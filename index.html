@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-measure/3.1.0/leaflet-measure.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch/dist/geosearch.css" />
+    <link href = "fonts/segoe ui/stylesheet.css" rel = "stylesheet" type = "text/css" />
     <script
     src="https://cdn.jsdelivr.net/gh/gokertanrisever/leaflet-ruler@master/src/leaflet-ruler.js"
     integrity="sha384-8SqKZR7V8uOetpjjbcNJHvwuHpb074WS0UXjCLhzfJUqYn3B/uWx1WVv5mwRp1mV"
@@ -134,7 +135,7 @@ input[type="text"]:focus {
 .red-id .r-container,
 .red-id .rls-container 
 .red-id .icon-container {
-    color: red;
+    color: rgb(255, 0, 0);
 }
 
 .blue-id .label-container,
@@ -156,35 +157,36 @@ input[type="text"]:focus {
             margin-left: 25px;
         }
         .label-container {
-            font-size: 14px;
-            font-weight: 450;
-  font-family: "Arial", sans-serif;
+            font-size: 14.3px;
+            font-weight: 600;
+font-family: 'Segoe UI', sans-serif;
             -webkit-text-stroke-color: black;
         }
         .r-container {
-            font-size: 14px;
-            font-weight: 450;
-  font-family: "Arial", sans-serif;
+            font-size: 14.3px; 
+            font-weight: 600;
+font-family: 'Segoe UI', sans-serif;
  
         }
         .rls1-container {
-            font-size: 14px;
-  font-family: "Arial", sans-serif;
+            font-size: 14.3px;
+            font-weight: 600;
+font-family: 'Segoe UI', sans-serif;
             display: flex;
     flex-direction: column;
-    font-weight: 500;
    }
         .rls-container {
-            font-size: 14px;
+            font-size: 14.3px;
             display: flex;
-  font-family: "Arial", sans-serif;
-            font-weight: 450;
+font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
     flex-direction: column;
     justify-content: center;
    }
    .info-container {
-            line-height: 16.7px;
-            margin-top: 25px;
+            line-height: 14.3px;
+            margin-top: 35px;
+      
         }
         .info1-container {
             line-height: 16.7px;
@@ -192,8 +194,8 @@ input[type="text"]:focus {
         }
         .label1-container {
             font-size: 14px;
-  font-family: "Arial", sans-serif;
-            font-weight: 500;
+font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
             -webkit-text-stroke-color: black;
             white-space: nowrap;
 
@@ -201,8 +203,8 @@ input[type="text"]:focus {
         }
         .r1-container {
             font-size: 14px;
-            font-weight: 450;
-  font-family: "Microsoft Sans Serif", Tahoma, sans-serif;
+                        font-weight: 600;
+font-family: 'Segoe UI', sans-serif;
  
         }
         .c-container {
@@ -251,7 +253,7 @@ input[type="text"]:focus {
             height: 27px;
             object-fit: cover;
             display: block;
-            margin-bottom: 25px;
+            margin-bottom: 35px;  
         }
 
 
@@ -401,6 +403,10 @@ input[type="text"]:focus {
         .leaflet-tile {
       image-rendering: pixelated;
     }
+    .icon-container .icon.su34-icon {
+    width: 35px;
+    height: 35px;
+}
     </style>
 </head>
 <body>
@@ -482,7 +488,7 @@ input[type="text"]:focus {
             <input type="checkbox" id="Херсонская область"><label for="Днепропетровская область">Херсонская область</label>
         </div>
         <div>
-            <input type="checkbox" id="А.Р Крым"><label for="А.Р Крым">А.Р Крым</label>
+            <input type="checkbox" id="АР Крым"><label for="АР Крым">АР Крым</label>
         </div>
         <div>
             <input type="checkbox" id="Одесская область"><label for="Одесская область">Одесская область</label>
@@ -494,7 +500,7 @@ input[type="text"]:focus {
             <input type="checkbox" id="Хмельницкая область"><label for="Хмельницкая область">Хмельницкая область</label>
         </div>
         <div>
-            <input type="checkbox" id="Ровенская область"><label for="Ровенская область">Ровенская область</label>
+            <input type="checkbox" id="Ровнеская область"><label for="Ровнеская область">Ровненская область</label>
         </div>
         <div>
             <input type="checkbox" id="Тернопольская область"><label for="Тернопольская область">Тернопольская область</label>
@@ -776,6 +782,7 @@ updateOverlayFilter();
             const objectId = generateId();
             let iconUrl;
             let iconClass = 'red-id';
+             let iconClass1 = ''           
             let shiftedClass = ''
             let iconSize = ''
             let shiftedClasss = ''
@@ -890,6 +897,7 @@ setTimeout(() => {
         iconClass = 'blue-id';
     } else if (speed >= 1200 && speed <= 1201) {
         iconUrl = 'Su-34.png';
+iconClass = 'red-id su34-icon';
     } else if (speed >= 1600 && speed <= 1601) {
         iconUrl = 'Su-57.png';
     } else if (speed >= 1204 && speed <= 1205) {
@@ -937,12 +945,16 @@ console.log(randomNumber);
     // Основной шаблон для всех остальных случаев
     iconHtml = `
         <div class="icon-container ${iconClass}">
-            <img src="${iconUrl}" class="icon" />
+            <img src="${iconUrl}" class="icon ${iconClass || ''}" />
              <div class="info-container ${shiftedClass} ${shiftedClasss}">
-                <span class="label-container ${iconClass}">${objectId}п(р)7</span>
+                <span class="label-container ${iconClass}">${objectId}п</span>
+                 <div class="c-container">
+                 <span class="r-container ${iconClass}">1 ПП (${getRlsForObject(objectId, iconUrl)}) (р)</span>
+            </div>
                 <div class="c-container">
                  <span class="r-container ${iconClass}">${speed} 0${randomNumber}</span>
             </div>
+            
         </div>
                 </div>
     `;
@@ -1089,13 +1101,11 @@ requestAnimationFrame(updatePosition);
         });
         // РЛС для объектов
         const rlsOptions = [
-    "59H6-E",
-    "Родник",
-    "Роса-РБ-М",
-    "Восток-3D",
-    "5Н84А",
-    "19Ж6М",
-    "Малахит"
+    "35М",
+    "18МА",
+    "МЛ",
+    "35",
+    "79"
 ]; // Исключаем "Волга" из общего списка
 
 // Функция для выбора РЛС
@@ -1210,14 +1220,14 @@ fetch('trevoga.json')
         });
 
         // Автоматически активируем "Луганская область" и "А. Р Крым"
-        const autoActivateRegions = ["Луганская область", "А.Р Крым"];
+        const autoActivateRegions = ["Луганская область", "АР Крым"];
         
         document.querySelectorAll('#alert-menu input[type=checkbox]').forEach(checkbox => {
             checkbox.onchange = function() {
                 let region = checkbox.id;
                 if (checkbox.checked && regions[region]) {
                     let layer = L.geoJSON(regions[region], {
-                        style: { color: 'red', fillColor: 'red', fillOpacity: 0.2, weight: 0.0 }
+                        style: { color: 'red', fillColor: 'red', fillOpacity: 0.3, weight: 0.0 }
                     }).addTo(map);
                     polygons[region] = layer;
                 } else if (polygons[region]) {
@@ -1717,7 +1727,7 @@ function getNextObjectId() {
 style: function(feature) {
   return {
     color: 'black',
-    weight: 0.5,
+    weight: 0.3,
     dashArray: '4',
     fillOpacity: 0
   };
